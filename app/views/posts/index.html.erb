@@ -1,0 +1,9 @@
+<h1>Posts</h1>
+<% @post.each do |post| %>
+  <hr>
+  <div class="jumbotron">
+    <h1><%= post.title %></h1>
+    <p class="lead"><%= post.body %></p>
+    <p><%= link_to 'Detail', post_path(post), class: 'btn btn-lg btn-primary' %></p>
+  </div>
+<% end %>
