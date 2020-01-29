@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sovaq</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Sovaq</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+
+  <h5 class="my-0 mr-md-auto font-weight-normal"> <%= link_to('SOVAQ', home_path) %></h5>
+  <% if user_signed_in? %>
+    <div>
+      <%= link_to 'Edit User', edit_user_registration_path, class: "p-2 text-white" %>
+      <%= link_to 'New Post', new_post_path, class: "p-2 text-white" %>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-outline-primary" %>
+    </div>
+  <% else %>
+    <%= link_to 'Login', new_user_session_path, class: "btn btn-outline-primary" %>
+  <% end %>
+</nav>
+
+<div class="container">
+  <%= yield %>
+</div>
+</body>
 </html>
