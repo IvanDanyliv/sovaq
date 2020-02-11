@@ -1,0 +1,4 @@
+%h1= @quiz.name
+%hr/
+= link_to 'Edit', edit_quiz_path(@quiz), class: 'btn btn-warning'
+= link_to 'Delete', quiz_path(@quiz), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger'

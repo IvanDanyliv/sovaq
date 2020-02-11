@@ -1,0 +1,12 @@
+= simple_form_for @quiz do |f|
+  %ul
+    - @quiz.errors.full_messages.each do |msg|
+      %li= msg
+  = f.input :name
+  %h5 Questions
+  #questions
+    = f.simple_fields_for :questions do |question|
+      = render 'question_fields', f: question
+      .links
+        = link_to_add_association 'Add Question', f, :questions
+  = f.submit

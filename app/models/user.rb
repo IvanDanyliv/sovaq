@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :quizzes
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:facebook, :github, :google_oauth2]
