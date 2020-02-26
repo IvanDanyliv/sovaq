@@ -16,6 +16,7 @@
   <h5 class="my-0 mr-md-auto font-weight-normal"> <%= link_to('SOVAQ', home_path) %></h5>
   <% if user_signed_in? %>
     <div>
+      <%= link_to 'Quizzes', quizzes_path, class: "p-2 text-white" %>
       <%= link_to 'Edit User', edit_user_registration_path, class: "p-2 text-white" %>
       <%= link_to 'New Post', new_post_path, class: "p-2 text-white" %>
       <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-outline-primary" %>

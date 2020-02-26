@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.0'
 
 gem 'devise'
+gem 'react-rails'
 
 # authorization with facebook github ang google
 gem 'activerecord-session_store'
