@@ -1,0 +1,6 @@
+%h1 Quizzes
+- @quiz.each do |quiz|
+  %hr/
+  .jumbotron
+    %h1= quiz.name
+    %p= link_to 'Start', quiz_path(quiz), class: 'btn btn-lg btn-primary'

@@ -4,6 +4,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.0'
 
 gem 'devise'
+gem "cocoon"
+gem 'simple_form'
+gem 'haml-rails'
+
 
 # authorization with facebook github ang google
 gem 'activerecord-session_store'
@@ -43,7 +47,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'faker'
-  gem 'factory_bot'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -64,4 +68,4 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
