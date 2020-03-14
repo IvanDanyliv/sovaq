@@ -1,6 +1,6 @@
 class OmniauthController < ApplicationController
 
-    before_action :auth_with_social_networks, only: [:facebook, :github, :google_oauth2]
+    before_action :auth_with_social_networks, only: %i[facebook github google_oauth2]
 
   def facebook
   end

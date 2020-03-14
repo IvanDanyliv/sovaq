@@ -1,0 +1,11 @@
+= simple_form_for @quiz do |f|
+  = f.input :name
+  %h3 questions
+  #Questions
+    = f.simple_fields_for :questions do |q|
+      = render 'question_fields', f: q
+      = q.simple_fields_for :answers do |a|
+        = render 'answer_fields', f: a
+    .links
+      = link_to_add_association 'add question', f, :questions
+  = f.submit

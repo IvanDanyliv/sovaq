@@ -1,0 +1,5 @@
+.nested-fields
+  = f.input :question, label: false
+  .links
+    = link_to_add_association 'add answer', f, :answers
+  = link_to_remove_association "remove question", f
